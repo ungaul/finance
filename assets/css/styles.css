@@ -10,7 +10,7 @@ body[theme="dark"] {
 
 body[theme="dark"] #logo img,
 body[theme="dark"] #preloader-logo {
-  filter: brightness(42) hue-rotate(10deg);
+  filter: brightness(25) saturate(0.3) hue-rotate(10deg);
 }
 
 body[theme="dark"] .menu-text:hover {
@@ -573,7 +573,7 @@ footer p {
   opacity: 100 !important;
 }
 
-header.active{
+header.active {
   z-index: 2 !important;
 }
 
