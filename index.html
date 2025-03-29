@@ -3,12 +3,12 @@
 
 <head>
   <!-- HTML Meta Tags -->
-  <title>Investir : Guide</title>
-  <meta name="description" content="Foodzillas" />
+  <title>Investir: Guide</title>
+  <meta name="description" content="Investir: Guide" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-  <link rel="shortcut icon" href="/assets/img/icon_512.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="/assets/img/icon_500.png" type="image/x-icon" />
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fdf6f3" />
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" />
   <link rel="manifest" href="/manifest.json" />
@@ -17,38 +17,40 @@
   <meta name="robots" content="noindex" />
 
   <!-- Google / Search Engine Tags -->
-  <meta itemprop="name" content="Foodzillas" />
+  <meta itemprop="name" content="Investir: Guide" />
   <meta itemprop="description" content="Foodzillas" />
-  <meta itemprop="image" content="https://cdn.discordapp.com/attachments/555396911839051815/944726949266350090/Ramen.png" />
+  <meta itemprop="image" content="assets/img/logo.png" />
 
   <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://wayyx.xyz/foodzillas" />
+  <meta property="og:url" content="https://ungaul.github.io/finance/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Foodzillas" />
-  <meta property="og:description" content="Foodzillas" />
-  <meta property="og:image" content="https://cdn.discordapp.com/attachments/555396911839051815/944726949266350090/Ramen.png" />
+  <meta property="og:title" content="Investir: Guide" />
+  <meta property="og:description" content="Investir: Guide" />
+  <meta property="og:image" content="assets/img/logo.png" />
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Foodzillas" />
-  <meta name="twitter:description" content="Foodzillas" />
-  <meta name="twitter:image" content="https://cdn.discordapp.com/attachments/555396911839051815/944726949266350090/Ramen.png" />
+  <meta name="twitter:title" content="Investir: Guide" />
+  <meta name="twitter:description" content="Investir: Guide" />
+  <meta name="twitter:image" content="assets/img/logo.png" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="stylesheet" href="" id="stylestylesheet" />
-  <link rel="stylesheet" href="assets/css/dark.css" id="darkmodestylesheet" />
+  <link rel="stylesheet" href="assets/css/preloader.css" />
+  <link rel="stylesheet" href="assets/css/context-menu.css" />
+  <link rel="stylesheet" href="assets/css/scrollbar.css" />
 
   <!-- JS -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
   <script defer src="assets/js/darkmode.js"></script>
   <script defer src="assets/js/preloader.js"></script>
   <script defer src="assets/js/animations.js"></script>
+  <script defer src="assets/js/context-menu.js"></script>
   <script defer src="assets/js/alternate-style.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -56,6 +58,9 @@
 </head>
 
 <body>
+  <!-- Menu -->
+  <div id="menu-container"></div>
+
   <!-- PRELOADER  -->
   <div id="preloader">
     <p class="preloader-waiting">ロード..</p>
@@ -66,10 +71,8 @@
   </div>
 
   <!-- Context Menu -->
-  <div class="context-menu">
-    <a href="#page">Haut de Page</a>
-    <a href="#gallery">Gallerie</a>
-    <p data-url="/">Accueil</p>
+  <div class="context-menu disabled">
+    <a href="#">Haut de Page</a>
   </div>
 
   <!-- Header -->
@@ -77,18 +80,14 @@
     <div id="header-left">
       <a id="logo" href="/"></a>
       <div id="links">
-        <a href=""><ion-icon name="logo-youtube"></ion-icon></a>
-        <a href=""><ion-icon name="logo-instagram"></ion-icon></a>
-        <a href=""><ion-icon name="logo-twitter"></ion-icon></a>
-        <a href=""><ion-icon name="link-outline"></ion-icon></a>
+        <a href="https://github.com/ungaul/finance" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+        <!-- <a href="https://twitter.com/un_gaul" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a> -->
+        <a id="url" href="#"><ion-icon name="link-outline"></ion-icon></a>
       </div>
     </div>
     <div id="header-right">
-      <div id="languages"><ion-icon name="globe-outline"></ion-icon>
-        <p class="active">FR</p>|<p>日本語</p>
-      </div>
       <div id="style"><ion-icon name="brush-outline"></ion-icon></div>
-      <div id="buttondarkmode1"></div>
+      <div><ion-icon class="buttonDarkMode" name="sun-outline"></ion-icon></div>
       <div id="menu"><ion-icon name="add-outline"></ion-icon>Menu</div>
     </div>
   </header>
@@ -97,85 +96,516 @@
   <div class="cursor"></div>
 
   <!-- App -->
-  <h1 id="article-title">Révélations sur les mythe des relations sociales modernes</h1>
+  <h1 id="top" class="article-title">Investir : Guide</h1>
   <div id="app">
     <div id="article-top">
       <div class="horizontal-line"></div>
       <div id="metadata">
-        <span>Auteur</span>
-        <span>29/01/2023</span>
+        <span>@un_gaul</span>
+        <span>29/03/2025</span>
       </div>
-      <div class="image"></div>
-      <span class="caption">Yes.</span>
+      <div class="image"><img src="assets/img/article/1.jpg" alt="1.jpg"></div>
     </div>
     <article>
-      <h3>Titre</h3>
-      <p>
-        Il est important de comprendre que la "redpill" n'est pas nécessairement synonyme de véhiculer des idéologies extrémistes ou de propager de fausses informations. Il s'agit plutôt de révéler des vérités cachées ou ignorées par la société, et de remettre en question les croyances et les narratifs dominants. En ce qui concerne les relations sociales, il
-        est important de comprendre que la société moderne promeut souvent des idéaux irréalistes et nocifs en matière de relations amoureuses et de genre. Par exemple, l'idée selon laquelle tout le monde devrait être "pansexuel" et "polyamoureux" est non seulement irréaliste, mais peut également causer de la douleur et de la confusion pour ceux qui ne se
-        sentent pas à l'aise avec ces idéologies. Il est également important de comprendre que la société moderne tend à stigmatiser les relations traditionnelles et les rôles de genre, alors qu'il n'y a rien de mal à vouloir être en couple et à jouer un rôle traditionnel dans une relation. En
-        ce qui concerne les mensonges modernes, il est important de comprendre que les médias sociaux et les médias traditionnels ont tendance à véhiculer des narratifs biaisés et à cacher des faits importants. Par exemple, les médias sociaux tendent à promouvoir une image irréelle de la beauté et de la réussite, ce qui peut causer de la détresse mentale
-        chez ceux qui se sentent en dehors de cette norme. Les médias traditionnels, quant à eux, ont tendance à véhiculer des narratifs politiques biaisés et à cacher des informations importantes qui contredisent ces narratifs. Pour redpill la société sur les relations sociales et les mensonges modernes, il est important de se tenir informé et de rechercher
-        des sources d'information alternatives. Il est également important de discuter de ces sujets avec des personnes de différents points de vue et de ne pas hésiter à remettre en question les narratifs dominants. Il est important de rappeler que la vérité est complexe et qu'il n'y a pas de
-        réponse facile à tout.
-      </p>
-      <div class="image"></div>
-      <span class="caption">Yes.</span>
+      <h3>Pourquoi investir ?</h3>
+      <p>Les livrets réglementés (Livret A, PEL, etc.) offrent une grande sécurité, mais leur rendement est trop faible face à l'inflation. En laissant votre argent dormir, vous perdez progressivement du pouvoir d'achat.<br><br>81% des Français possèdent un livret A, avec en moyenne 6351€ d’épargne, ce qui démontre la volonté d’épargner. Dans le contexte des
+        5
+        dernières années, voici ce qu’ils obtiennent :</p>
+      <div class="table-container">
+        <div data-size="20-40-40" class="table table1">
+          <div class="row header">
+            <div class="cell">Année</div>
+            <div class="cell">Taux de rendement du Livret A</div>
+            <div class="cell">Taux d'inflation</div>
+          </div>
+          <div class="row">
+            <div class="cell">2020</div>
+            <div class="cell">0.50%</div>
+            <div class="cell">0.50%</div>
+          </div>
+          <div class="row">
+            <div class="cell">2021</div>
+            <div class="cell">0.50%</div>
+            <div class="cell">1.60%</div>
+          </div>
+          <div class="row">
+            <div class="cell">2022</div>
+            <div class="cell">1.00 % (févr.-juil.) - 2.00 % (août-déc.)</div>
+            <div class="cell">5.20%</div>
+          </div>
+          <div class="row">
+            <div class="cell">2023</div>
+            <div class="cell">3.00%</div>
+            <div class="cell">4.90%</div>
+          </div>
+          <div class="row">
+            <div class="cell">2024</div>
+            <div class="cell">3.00%</div>
+            <div class="cell">2.00%</div>
+          </div>
+        </div>
+      </div>
+      <span class="caption">Source: <a href="https://www.insee.fr/fr/statistiques/4268033" target="_blank">Insee</a></span>
+      <p>Ainsi, le Livret A ne réalise non seulement aucun bénéfice, mais ne comble pas l’inflation.<br><br>Face à cette érosion silencieuse, investir devient non pas un luxe, mais une nécessité pour préserver, voire accroître son pouvoir d’achat au long terme.</p>
     </article>
+
     <article>
-      <h3>Titre</h3>
-      <p>
-        Le wokisme et l'inclusivité sont des mouvements importants en Occident qui visent à lutter contre les discriminations et les inégalités. Cependant, ces mouvements ont également été associés à des mensonges et des déformations de la vérité qui peuvent nuire à leur cause. Surrepresentation des minorités: Les médias peuvent surreprésenter les minorités
-        dans les histoires pour faire passer un message progressiste, mais cela peut également causer des problèmes en incitant à la ségrégation. Dénaturation de la réalité: Certaines personnes peuvent déformer les faits pour faire passer un message progressiste, ce qui peut causer de la confusion et entraver les efforts pour résoudre les problèmes réels.
-        Dénonciation systématique de la culture occidentale: Certains peuvent dénoncer systématiquement la culture occidentale sans tenir compte de ses accomplissements et de ses avantages, ce qui peut causer de la frustration et de la colère chez les personnes qui se sentent attaquées. Il est
-        important de faire la distinction entre les véritables problèmes de discrimination et les mensonges qui peuvent être associés aux mouvements pour l'inclusivité et le wokisme. En reconnaissant et en abordant les mensonges, nous pouvons mieux comprendre les problèmes réels et trouver des solutions plus efficaces. En conclusion, bien que le wokisme et
-        l'inclusivité soient des mouvements importants, il est crucial de faire la distinction entre les véritables problèmes et les mensonges qui peuvent les entacher. En travaillant ensemble pour éliminer les mensonges, nous pouvons améliorer ces mouvements et faire progresser la cause de l'égalité et de la justice pour tous.
-      </p>
-      <div class="image"></div>
-      <span class="caption">Yes.</span>
+      <h3>Avantages & inconvénients de l’investissement financier</h3>
+      <div class="table-container">
+        <div data-size="20-45-35" class="table table2">
+          <div class="row header">
+            <div class="cell">Critère</div>
+            <div class="cell">Investissement financier</div>
+            <div class="cell">Livret A / PEL</div>
+          </div>
+          <div class="row">
+            <div class="cell">Accessibilité</div>
+            <div class="cell">Très accessible via une application</div>
+            <div class="cell">Très accessible dès quelques euros</div>
+          </div>
+          <div class="row">
+            <div class="cell">Rendement</div>
+            <div class="cell">5–7 %/an sur le long terme (non garanti)</div>
+            <div class="cell">2–3 % max, très souvent inférieur à l’inflation</div>
+          </div>
+          <div class="row">
+            <div class="cell">Risque de perte</div>
+            <div class="cell">Possible, en cas de baisse du marché</div>
+            <div class="cell">Aucune perte possible (capital garanti)</div>
+          </div>
+          <div class="row">
+            <div class="cell">Liquidité</div>
+            <div class="cell">Très élevée : revente en 24–48 h</div>
+            <div class="cell">Totale : retrait possible à tout moment</div>
+          </div>
+          <div class="row">
+            <div class="cell">Fiscalité</div>
+            <div class="cell">0 % après 5 ans via PEA, ou 30 % via CTO</div>
+            <div class="cell">Exonéré d’impôt (Livret A / LDDS)</div>
+          </div>
+          <div class="row">
+            <div class="cell">Complexité</div>
+            <div class="cell">Moyenne : il faut comprendre les bases</div>
+            <div class="cell">Nulle : aucune explication nécessaire</div>
+          </div>
+          <div class="row">
+            <div class="cell">Transparence</div>
+            <div class="cell">Totale : vous savez exactement ce que vous financez</div>
+            <div class="cell">Aucune : placement fléché, sans visibilité</div>
+          </div>
+          <div class="row">
+            <div class="cell">Blocage du capital</div>
+            <div class="cell">Aucun : revente immédiate si nécessaire. Contrairement à l'immobilier, on peut retirer sans essuyer de pertes conséquentes</div>
+            <div class="cell">Aucun</div>
+          </div>
+          <div class="row">
+            <div class="cell">Passivité</div>
+            <div class="cell">Très passif (surtout avec des ETF)</div>
+            <div class="cell">Totalement passif</div>
+          </div>
+        </div>
+      </div>
     </article>
+
     <article>
-      <h3>Titre</h3>
-      <p>
-        Le wokisme et l'inclusivité sont des mouvements importants en Occident qui visent à lutter contre les discriminations et les inégalités. Cependant, ces mouvements ont également été associés à des mensonges et des déformations de la vérité qui peuvent nuire à leur cause. Surrepresentation des minorités: Les médias peuvent surreprésenter les minorités
-        dans les histoires pour faire passer un message progressiste, mais cela peut également causer des problèmes en incitant à la ségrégation.
-        <li>Bah</li>
-        <li>Ouais</li>
-        <li>Hein</li>
-        Nous pouvons mieux comprendre les problèmes réels et trouver des solutions plus efficaces. En conclusion, bien que le wokisme et l'inclusivité soient des mouvements importants, il est crucial de faire la distinction entre les véritables problèmes et les mensonges qui peuvent les entacher. En travaillant ensemble pour éliminer les mensonges, nous
-        pouvons améliorer ces mouvements et faire progresser la cause de l'égalité et de la justice pour tous.
-      </p>
-      <div class="image"></div>
-      <span class="caption">Yes.</span>
+      <h3>Investir vs spéculer : quelle différence ?</h3>
+      <p>La majorité des gens émettent souvent un lien entre la spéculation et l’investissement car ils ressortent du même domaine, mais les objectifs sont totalement différents.</p>
+      <div class="table-container">
+        <div data-size="15-30-55" class="table table3">
+          <div class="row header">
+            <div class="cell"></div>
+            <div class="cell">Spéculer</div>
+            <div class="cell">Investir</div>
+          </div>
+          <div class="row">
+            <div class="cell">Objectif</div>
+            <div class="cell">Objectif court terme : rechercher des gains rapides.</div>
+            <div class="cell">Objectif long terme : faire travailler son argent sur plusieurs années sans action régulière.</div>
+          </div>
+          <div class="row">
+            <div class="cell">Exemples</div>
+            <div class="cell">Trading actif, day trading, crypto monnaies.</div>
+            <div class="cell">ETF, iShares, fonds indiciels, actions de grandes entreprises, obligations</div>
+          </div>
+          <div class="row">
+            <div class="cell">Risque</div>
+            <div class="cell">Risque élevé avec des fluctuations importantes.</div>
+            <div class="cell">Risque faible grâce aux choix d’indices stables et à la diversification. Une évolution modérée face à la spéculation, mais bien plus sûre.</div>
+          </div>
+        </div>
+      </div>
     </article>
+
     <article>
-      <h3>Titre</h3>
-      <p>
-        Les relations homme/femme au 21ème siècle sont confrontées à de nombreux défis en raison des changements sociaux, économiques et technologiques importants qui se sont produits ces dernières années. L'un des défis les plus importants est la fragilisation des couples, qui peut être causée par plusieurs facteurs différents. Travail et responsabilités
-        familiales: Les femmes ont gagné en autonomie et en liberté, ce qui leur permet de concilier travail et vie familiale. Cependant, cela peut entraîner une pression accrue sur les couples pour trouver un équilibre entre leurs obligations professionnelles et familiales. Changements technologiques: L'utilisation croissante de la technologie, notamment
-        les réseaux sociaux et les sites de rencontre en ligne, peut avoir un impact sur les relations amoureuses en permettant à chacun de chercher de nouveaux partenaires ou de rester en contact avec des personnes du passé. Différences d'attentes: Les hommes et les femmes peuvent avoir des
-        attentes différentes en ce qui concerne leur relation, ce qui peut entraîner des conflits et des déceptions. Stress et pression financière: La pression financière peut causer un stress important pour les couples, ce qui peut entraîner des problèmes dans leur relation. Pour remédier à ces défis, les couples peuvent adopter des stratégies pour
-        renforcer leur relation, telles que la communication ouverte et honnête, la gestion du temps et des priorités, et l'établissement de buts communs. Il est également important de reconnaître les différences et de travailler ensemble pour les surmonter. En conclusion, les relations homme/femme au 21ème siècle sont confrontées à de nombreux défis en
-        raison des changements sociaux, économiques et technologiques importants. La fragilisation des couples peut être causée par plusieurs facteurs différents, mais les couples peuvent adopter des stratégies pour renforcer leur relation et surmonter les défis ensemble. En travaillant ensemble, les
-        couples peuvent construire une relation solide et durable pour le futur.
-      </p>
-      <div class="image"></div>
-      <span class="caption">Yes.</span>
+      <h3>Investir en bourse en France : PEA vs Compte-Titres</h3>
+      <p>Pour investir, vous avez deux options principales :</p>
+      <div class="table-container">
+        <div data-size="20-40-40" class="table table4">
+          <div class="row header">
+            <div class="cell"></div>
+            <div class="cell">Plan d’Épargne en Actions (PEA)</div>
+            <div class="cell">Compte-Titres Ordinaire (CTO)</div>
+          </div>
+          <div class="row">
+            <div class="cell">Avantages</div>
+            <div class="cell">
+              <ul>
+                <li>Les gains (plus-values et dividendes) ne sont pas imposés si vous gardez votre PEA au moins 5 ans (seuls les prélèvements sociaux de 17,2% s’appliquent).</li>
+                <li>C’est l’un des meilleurs cadres fiscaux pour investir en bourse en France.</li>
+              </ul>
+            </div>
+            <div class="cell">
+              <ul>
+                <li>Aucune limite de versement.</li>
+                <li>Vous pouvez acheter tout ce que vous voulez : actions françaises, américaines, asiatiques, ETF internationaux, obligations, etc.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell">Inconvénients</div>
+            <div class="cell">
+              <ul>
+                <li>Vous ne pouvez pas investir dans toutes les actions du monde : uniquement celles d’entreprises européennes (ou certains ETF "éligibles PEA").</li>
+                <li>Il y a un plafond de versement à 150 000 €.</li>
+              </ul>
+            </div>
+            <div class="cell">
+              <ul>
+                <li>Chaque gain est taxé dès qu’il est réalisé : soit par le PFU (Prélèvement Forfaitaire Unique) de 30% (c’est-à-dire 12,8 % d'impôt + 17,2 % de prélèvements sociaux), soit en choisissant l’imposition classique (si vous êtes faiblement imposé).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h4>Que choisir ?</h4>
+      <p>Vous débutez et vous investissez pour le long terme (5 ans et plus) ?<br>→ Le PEA est à privilégier : il offre une excellente fiscalité et vous permet de vous constituer un portefeuille solide, surtout avec des ETF éligibles PEA (ex : MSCI World "PEA compatible").<br><br>Vous voulez investir dans des actions américaines ou
+        asiatiques ?<br>→ Il vous faut un CTO pour avoir accès aux marchés hors Europe.<br><br>Vous investissez des montants importants ou vous souhaitez utiliser les deux supports ?<br>→ Beaucoup de gens ouvrent les deux : un PEA pour profiter de la fiscalité, et un CTO pour la flexibilité.<br><br>💡 Vous pouvez ouvrir un compte-titres (CTO) automatiquement
+        en créant un compte chez un courtier. Il vous suffit d’avoir un compte bancaire SEPA relié : aucune autre démarche, aucun justificatif de revenus ou de patrimoine n’est nécessaire.</p>
     </article>
-    <div id="sources">
-      <h3>Sources</h3>
-      <li><a href="">Source 1</a></li>
-      <li><a href="">Source 2</a></li>
-      <li><a href="">Source 3</a></li>
-    </div>
+
+    <article>
+      <h3>Parmi chaque type, quelles stratégies sont possibles ?</h3>
+      <div class="table-container">
+        <div data-size="22-14-14-15-15-20" class="table table5">
+          <div class="row header">
+            <div class="cell">Type d’actif</div>
+            <div class="cell">Niveau de risque</div>
+            <div class="cell">Rendement potentiel</div>
+            <div class="cell">Liquidité</div>
+            <div class="cell">Complexité</div>
+            <div class="cell">Pour qui ?</div>
+          </div>
+          <div class="row">
+            <div class="cell">ETF</div>
+            <div class="cell">Modéré</div>
+            <div class="cell">Moyen à élevé (5–7%)</div>
+            <div class="cell">Très liquide</div>
+            <div class="cell">Faible</div>
+            <div class="cell">Débutants et intermédiaires (long terme)</div>
+          </div>
+          <div class="row">
+            <div class="cell">Actions en direct</div>
+            <div class="cell">Élevé</div>
+            <div class="cell">Potentiellement élevé</div>
+            <div class="cell">Très liquide</div>
+            <div class="cell">Moyen à élevé</div>
+            <div class="cell">Investisseurs actifs, profils autonomes</div>
+          </div>
+          <div class="row">
+            <div class="cell">Obligations</div>
+            <div class="cell">Faible à modéré</div>
+            <div class="cell">Faible à moyen (2–4%)</div>
+            <div class="cell">Moyenne à élevée</div>
+            <div class="cell">Faible</div>
+            <div class="cell">Investisseurs prudents ou en phase défensive</div>
+          </div>
+          <div class="row">
+            <div class="cell">Fonds monétaires / cash management</div>
+            <div class="cell">Très faible</div>
+            <div class="cell">Très faible (&lt;2%)</div>
+            <div class="cell">Très liquide</div>
+            <div class="cell">Très faible</div>
+            <div class="cell">Épargne de transition ou de court terme</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <h3>Quels types d’actifs choisir ?</h3>
+      <h4>A. ETF : pour investir efficacement et passivement</h4>
+      <p>Les ETF (Exchange Traded Funds) sont des fonds cotés en bourse qui répliquent un indice de marché (ex : MSCI World, S&P 500).<br>En un seul achat, vous êtes exposé à des centaines d’entreprises, secteurs et pays : diversification automatique.<br>C’est l’approche passive par excellence : pas de sélection d’actions, pas de timing, peu de
+        frais.<br>L’investissement se fait en général via des versements réguliers (DCA), sur un ou deux ETF globaux, avec une vision long terme (5 à 20 ans).</p>
+      <div class="table-container">
+        <div data-size="15-15-15-15-15-25" class="table table6">
+          <div class="row header">
+            <div class="cell">Objectif</div>
+            <div class="cell">Indice recommandé</div>
+            <div class="cell">ETF concrets (codes)</div>
+            <div class="cell">Montant minimal conseillé</div>
+            <div class="cell">Fréquence d’investissement par mois</div>
+            <div class="cell">Stratégie recommandée</div>
+          </div>
+          <div class="row">
+            <div class="cell">Exposition globale long terme</div>
+            <div class="cell">MSCI World</div>
+            <div class="cell">CW8 (Amundi), VWCE (Vanguard)</div>
+            <div class="cell">À partir de 50–100 €</div>
+            <div class="cell">Mensuelle</div>
+            <div class="cell">Achat régulier (DCA), 100% sur un ETF global</div>
+          </div>
+          <div class="row">
+            <div class="cell">Exposition + émergents</div>
+            <div class="cell">MSCI ACWI / FTSE All-World</div>
+            <div class="cell">VWCE (Vanguard)</div>
+            <div class="cell">100 € et +</div>
+            <div class="cell">Mensuelle ou trimestrielle</div>
+            <div class="cell">70 % MSCI World + 30 % émergents ou full All-World</div>
+          </div>
+          <div class="row">
+            <div class="cell">Approche Europe optimisée PEA</div>
+            <div class="cell">MSCI Europe / Euro Stoxx 50</div>
+            <div class="cell">E50, PEA Stoxx 600</div>
+            <div class="cell">50 € minimum</div>
+            <div class="cell">Mensuelle</div>
+            <div class="cell">Pour PEA uniquement, peu utile seul</div>
+          </div>
+          <div class="row">
+            <div class="cell">Stratégie prudente</div>
+            <div class="cell">ETF obligataire</div>
+            <div class="cell">iShares Euro Gov Bond 1–3y</div>
+            <div class="cell">100 €</div>
+            <div class="cell">Mensuelle</div>
+            <div class="cell">70 % obligations / 30 % actions (si profil prudent)</div>
+          </div>
+          <div class="row">
+            <div class="cell">Stratégie dividendes réguliers</div>
+            <div class="cell">S&amp;P Dividend Aristocrats</div>
+            <div class="cell">SPYD, Ishares Div Aristocrats</div>
+            <div class="cell">100–200 €</div>
+            <div class="cell">Trimestrielle</div>
+            <div class="cell">Pour revenus passifs, à réinvestir ou encaisser</div>
+          </div>
+        </div>
+      </div>
+      <p>MSCI World Index</p>
+      <div class="image"><img src="assets/img/article/2.jpg" alt="2.jpg"></div>
+      <span class="caption">Source : <a href="https://www.abcbourse.com/graphes/eod/MSWRDu/lc7" target="_blank">ABC Bourse</a></span>
+      <p>Le risque de perte diminue fortement avec la durée d’investissement. À court terme (< 3 ans), les marchés peuvent fluctuer. Mais sur 10 ans et plus, les ETF globaux ont toujours été positifs historiquement, grâce : <ul>
+          <li>à la diversification interne de l’indice,</li>
+          <li>au renouvellement naturel des entreprises cotées.</li>→ Le temps est le principal facteur de sécurité.</p>
+      </ul>
+      <h4>B. Actions en direct : pour apprendre ou viser un rendement élevé</h4>
+      <p>Acheter des actions individuelles, c’est investir dans une entreprise spécifique, avec ses performances, ses risques et ses perspectives.
+        <br>Contrairement aux ETF, le risque n’est pas mutualisé. Le potentiel de rendement est plus élevé, mais l’exposition à la volatilité et aux erreurs de sélection est maximale.
+        <br>C’est un excellent outil pour se former au fonctionnement des marchés et des entreprises, ou chercher une performance ciblée (dividendes, croissance…), à condition de rester prudent sur les montants engagés.<br>Risques spécifiques et gestion stratégique
+      <ul>
+        <li>Risque d’erreur humaine : mauvaise sélection, achat au mauvais moment, revente dans la panique.</li>
+        <li>Risque sectoriel ou géographique : une crise peut affecter tout un segment (ex : tech ou énergie).</li>
+        <li>Risque de concentration : mettre 500 € sur une seule valeur peut effacer des mois d’épargne en un jour.</li>
+      </ul>
+      Stratégie recommandée
+      <ul>
+        <li>Diversifiez manuellement si vous sortez des ETF.</li>
+        <li>Jamais plus de 5 % de votre portefeuille total sur une seule action.</li>
+        <li>Une stratégie "core ETF + satellite actions" est souvent préférable.</li>
+      </ul>
+      Choisissez une logique claire :
+      <ul>
+        <li>Dividendes stables : revenus réguliers, volatilité modérée</li>
+        <li>Croissance : gains potentiels élevés, mais fort drawdown possible</li>
+        <li>Apprentissage : petites sommes sur des valeurs que vous comprenez</li>
+        <li>Lisez les résultats trimestriels, la dette, la rentabilité, le PER</li>
+        <li> Comprenez ce que fait l’entreprise et dans quel secteur elle évolue</li>
+        <li>Évitez les “coups” ou les valeurs à la mode sans conviction réelle</li>
+        <li>Pour une analyse plus poussée, les brokers publient tous des résultats financiers détaillés, mais vous pouvez aussi utiliser des outils d’analyse comme TradingView.</li>
+      </ul>
+      </p>
+      <div class="table-container">
+        <div data-size="20-20-20-15-25" class="table table7">
+          <div class="row header">
+            <div class="cell">Objectif</div>
+            <div class="cell">Type d’action</div>
+            <div class="cell">Exemple</div>
+            <div class="cell">Montant conseillé par mois</div>
+            <div class="cell">Stratégie recommandée</div>
+          </div>
+          <div class="row">
+            <div class="cell">Apprentissage / curiosité</div>
+            <div class="cell">Grandes capitalisations</div>
+            <div class="cell">LVMH, Airbus, Total Energies</div>
+            <div class="cell">À partir de 100–200 €</div>
+            <div class="cell">Acheter 1 ou 2 actions, suivre l’actu, sans surinvestir</div>
+          </div>
+          <div class="row">
+            <div class="cell">Rendement long terme</div>
+            <div class="cell">Actions de croissance</div>
+            <div class="cell">Apple, ASML, Nvidia</div>
+            <div class="cell">300 € et +</div>
+            <div class="cell">Diversification manuelle, ou en complément d’ETF</div>
+          </div>
+          <div class="row">
+            <div class="cell">Rendement régulier</div>
+            <div class="cell">Actions à dividende stable</div>
+            <div class="cell">Unilever, Vinci, Sanofi</div>
+            <div class="cell">200 € et +</div>
+            <div class="cell">Encaissement des dividendes ou réinvestissement</div>
+          </div>
+          <div class="row">
+            <div class="cell">Stratégie offensive sectorielle</div>
+            <div class="cell">Tech, santé, clean energy</div>
+            <div class="cell">Tesla, Moderna, Enphase</div>
+            <div class="cell">Variable, prudence</div>
+            <div class="cell">Pas plus de 5–10 % du portefeuille total</div>
+          </div>
+        </div>
+      </div>
+      <div class="image"><img src="assets/img/article/3.jpg" alt="3.jpg"></div>
+      <span class="caption">Source : <a href="https://www.google.com/finance/quote/.INX:INDEXSP?hl=en&comparison=NASDAQ%3ATSLA&window=5Y" target="_blank">Google Finance</a></span>
+      <p>Contrairement aux ETF, une action individuelle présente une volatilité bien plus élevée, mais c’est aussi ce qui lui permet, dans certains cas, de délivrer des performances nettement supérieures. À condition de bien choisir, d’être patient et de supporter les fluctuations, l’investissement direct en action peut surperformer les indices, mais au prix
+        d’un risque plus fort et donc nécessitant un suivi plus fréquent.<br><br>💡 L’investissement en actions individuelles est le plus risqué mais aussi le plus formateur.<br>À réserver soit aux profils expérimentés, soit à ceux qui veulent apprendre sans mettre en danger leur capital.</p>
+      <h4>C. Obligations : pour stabiliser un portefeuille ou investir prudemment</h4>
+      <p>Les obligations sont des titres de créance : vous prêtez à un État ou une entreprise en échange d’un rendement fixe. Elles sont moins volatiles que les actions, mais offrent aussi des rendements plus limités, sauf cas particuliers.<br><br>Utilisées en complément d’un portefeuille actions, elles permettent de réduire la volatilité globale (surtout en
+        périodes d’incertitude), ou de garer son capital temporairement sans l’exposer à de fortes variations.</p>
+      <div class="table-container">
+        <div data-size="20-20-15-15-30" class="table table8">
+          <div class="row header">
+            <div class="cell">Objectif</div>
+            <div class="cell">Produit recommandé</div>
+            <div class="cell">Exemple d’ETF</div>
+            <div class="cell">Montant conseillé par mois</div>
+            <div class="cell">Stratégie recommandée</div>
+          </div>
+          <div class="row">
+            <div class="cell">Sécurité + rendement modéré</div>
+            <div class="cell">Obligations d’État à court terme</div>
+            <div class="cell">iShares € Government 1–3y</div>
+            <div class="cell">100 € et +</div>
+            <div class="cell">Idéal pour phase d’attente ou épargne sécurisée</div>
+          </div>
+          <div class="row">
+            <div class="cell">Diversification conservatrice</div>
+            <div class="cell">Obligations monde / mix</div>
+            <div class="cell">Lyxor Global Aggregate Bond</div>
+            <div class="cell">100 € et +</div>
+            <div class="cell">Combiner avec ETF actions (ex : 60 % actions, 40 % obligs)</div>
+          </div>
+          <div class="row">
+            <div class="cell">Revenu fixe (rendement)</div>
+            <div class="cell">Obligations d’entreprise</div>
+            <div class="cell">iShares € Corporate Bond</div>
+            <div class="cell">200 € et +</div>
+            <div class="cell">Plus risqué que l’État, mais meilleurs rendements</div>
+          </div>
+        </div>
+      </div>
+      <p>💡 En phase de baisse des taux, les obligations à taux fixe peuvent aussi prendre de la valeur.</p>
+    </article>
+
+    <article>
+      <h3>Guide : se lancer pas à pas</h3>
+      <h4>1. Choix du courtier (Broker en anglais)</h4>
+      <p>
+      <ul>
+        <li>Nous prenons l'exemple de Trade Republic en raison de sa simplicité et de son confort d’utilisation.</li>
+        <li>Pour ce qui est des frais, la la carte bancaire gratuite, retrait en cash gratuit inférieur à 100€, au delà 1€/retrait.</li>
+        <li>Les seuls frais d’investissement sont les “Frais externes par transaction ponctuelle” : 1€ à chaque investissement non-régulier (donc privilégiez un investissement régulier type mensuel ou alors de gros investissements ponctuels).</li>
+        <li>Il s’agit d’un courtier conséquent, et fiable de par son importance dans le marché des courtiers européens.</li>
+      </ul>
+      </p>
+      <h4>2. Ouverture du compte</h4>
+      <p>Suivez les étapes d’installation depuis l’application mobile ou le navigateur sur ordinateur
+        <br><br>Vous aurez besoin de :
+      <ul>
+        <li>Numéro de téléphone</li>
+        <li>Justificatif de domicile</li>
+        <li>Être majeur</li>
+        <li>Carte d’identité ou Passeport</li>
+        <li>Un compte bancaire SEPA (compte bancaire classique au sein de l’Union Européenne)</li>
+        <li>Vous êtes résident permanent et assujetti à l’impôt dans le pays dans lequel vous vous inscrivez</li>
+        <li>Une adresse fiscale ainsi qu’un numéro d'identification fiscale (NIF)</li>
+      </ul>
+      </p>
+      <h4>3. Investir</h4>
+      <p>Une fois tout en ordre, vous pouvez (durant les heures d’ouverture de la bourse, soit de 7:30 à 23:00 CET du lundi au vendredi), parmi votre liste d’indices préalablement choisis, investir dans l’ETF que vous souhaitez :
+      <ol>
+        <li>Cliquez sur Recherche</li>
+        <li>Choisir l’action, ETF, ou obligation de votre choix</li>
+        <li>Cliquer sur Epargner</li>
+        <li>Choisir le montant, puis la fréquence de votre épargne (Mensuelle, Hebdomadaire…)</li>
+        <li>Confirmer</li>
+        <li>Au besoin, vérifier depuis l’application l’évolution de vos valeurs.</li>
+      </ol>
+      Si la valeur de votre investissement baisse, vous pouvez revendre à tout moment.<br><br>Mais rappelez-vous : le but ici n’est pas de “jouer” sur les variations à court terme, mais de laisser le temps faire son effet. En général, on évite de vendre en période de baisse, sauf si on a une bonne raison ou un besoin urgent.
+      </p>
+    </article>
+
+    <article>
+      <h3>Étude de cas : Comparaison sur 5 ans</h3>
+      <p>Imaginons que vous investissiez 100 € par mois pendant 5 ans, soit un total de 6 000 €.<br><br>Vous avez deux options : Placer votre argent sur un Livret A, sécurisé mais peu rémunérateur, ou l’investir. Nous allons prendre le cas d’un ETF mondial, pour viser un rendement très fiable et raisonnable à long terme. Si on se réfère aux valeurs de 2020 à
+        2024 incluses, voici ce que cela donnerait :</p>
+      <div class="table-container">
+        <div data-size="50-25-25" class="table table9">
+          <div class="row header">
+            <div class="cell"></div>
+            <div class="cell">Livret A</div>
+            <div class="cell">ETF (7%/an)</div>
+          </div>
+          <div class="row">
+            <div class="cell">Montant total investi</div>
+            <div class="cell">6 000 €</div>
+            <div class="cell">6 000 €</div>
+          </div>
+          <div class="row">
+            <div class="cell">Valeur finale (nominale)</div>
+            <div class="cell">6 159,41 €</div>
+            <div class="cell">7 119,59 €</div>
+          </div>
+          <div class="row">
+            <div class="cell">Montant nécessaire pour suivre l'inflation (+14,93% en 5 ans)</div>
+            <div class="cell">527.56 €</div>
+            <div class="cell">527.56 €</div>
+          </div>
+          <div class="row">
+            <div class="cell">Gain/Perte réelle</div>
+            <div class="cell">–368,15 € (–5,64 %)</div>
+            <div class="cell">+592,03 € (+9,07 %)</div>
+          </div>
+        </div>
+      </div>
+      <p>
+      <ul>
+        <li>Le Livret A ne permet pas de suivre l’inflation malgré sa sécurité : vous perdez 368 € de valeur réelle sur 5 ans.</li>
+        <li>L’ETF vous fait gagner du pouvoir d’achat réel : +592 €, en plus de protéger votre épargne de l’inflation.</li>
+      </ul>À effort d’épargne égal, l’investissement en ETF donne près de 1 000 € de différence sur 5 ans.
+      </p>
+    </article>
+
+    <article>
+      <h3>Conclusion</h3>
+      <p>Ce guide avait pour objectif de poser les bases d’un raisonnement simple mais fondamental : face à l’inflation, l’épargne classique ne suffit plus.
+        <br><br>Les livrets réglementés, comme le Livret A, offrent une sécurité indiscutable, mais ils ne protègent plus le pouvoir d’achat des ménages. Même avec une épargne régulière, les rendements sont structurellement inférieurs à l’évolution des prix. Résultat : une perte lente mais réelle de valeur.
+        <br><br>À l’inverse, l’investissement progressif dans des produits financiers comme les ETF larges et diversifiés permet :
+      <ul>
+        <li>de mieux résister à l’érosion monétaire,</li>
+        <li>de conserver une liquidité (contrairement à l’immobilier),</li>
+        <li>et de maîtriser son exposition au risque, à condition d’avoir une approche long terme.</li>
+      </ul>
+      <br>Il ne s’agit pas de "jouer en bourse", ni de spéculer. Il s’agit simplement de comprendre que l’épargne passive n’est plus suffisante, et que des outils simples, accessibles à tous, existent pour y répondre.
+      </p>
+    </article>
   </div>
 
   <!-- Footer -->
   <footer>
-    <p class="copyright"><span>Someone</span>•<span>© 2020-2023</span>•<span>Mentions légales</span>•<span>Réalisé par Someone</span></p>
+    <p>Disclaimer: Ce contenu est fourni à titre informatif et ne constitue pas un conseil en investissement personnalisé.</p>
+    <p class="copyright">
+      <!-- <span>@un_gaul</span> -->
+      <span>2025</span>
+      <!-- •<span>Mentions légales</span> -->
+      •<span>Réalisé par <a href="https://twitter.com/un_gaul" target="_blank">@un_gaul</a></span>
+    </p>
   </footer>
-
-  <!-- <button id="buttondarkmode2" class="disabled"></button> -->
 
   <div id="menu-panel"></div>
 </body>

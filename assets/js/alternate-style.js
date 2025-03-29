@@ -1,32 +1,33 @@
-const styletoggle = $("#style");
-const chosenStyle = $("#stylestylesheet");
 let defaultStyle = localStorage.getItem("defaultStyle");
 
-const altStyle = () => {
-  styletoggle.html("<ion-icon name='brush-outline'></ion-icon>");
-  chosenStyle.attr("href", "assets/css/style-alt.css");
+if (!defaultStyle) {
+  defaultStyle = "disabled";
+  localStorage.setItem("defaultStyle", "disabled");
+}
+
+const setAltStyle = () => {
+  $("#style").html("<ion-icon name='brush-outline'></ion-icon>");
+  $("body").attr("themeing", "alt");
   localStorage.setItem("defaultStyle", "enabled");
 };
 
 const setDefaultStyle = () => {
-  styletoggle.html("<ion-icon name='brush'></ion-icon>");
-  chosenStyle.attr("href", "");
+  $("#style").html("<ion-icon name='brush'></ion-icon>");
+  $("body").attr("themeing", "");
   localStorage.setItem("defaultStyle", "disabled");
 };
 
-const toggleStyle = () => {
-  defaultStyle = localStorage.getItem("defaultStyle");
-  if (defaultStyle === "disabled") {
-    altStyle();
-  } else {
-    setDefaultStyle();
-  }
-};
-
 if (defaultStyle === "enabled") {
-  altStyle();
+  setAltStyle();
 } else {
   setDefaultStyle();
 }
 
-styletoggle.on("click", toggleStyle);
+$("#style").on("click", () => {
+  const currentStyle = localStorage.getItem("defaultStyle");
+  if (currentStyle === "enabled") {
+    setDefaultStyle();
+  } else {
+    setAltStyle();
+  }
+});

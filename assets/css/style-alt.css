@@ -1,8 +1,0 @@
-:root {
-  --article-text-color: rgb(206, 11, 70) !important;
-}
-
-#logo,
-#preloader-logo {
-  filter: brightness(4) hue-rotate(87deg) !important;
-}

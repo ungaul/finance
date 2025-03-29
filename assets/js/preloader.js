@@ -26,7 +26,7 @@ function load() {
   }
 
   setTimeout(() => {
-    $(".colored-text").css("color", "var(--second)");
+    // $(".colored-text").css("color", "var(--second)");
     preloaderSwipe();
   }, 1500);
 

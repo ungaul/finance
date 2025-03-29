@@ -1,48 +1,33 @@
 let darkMode = localStorage.getItem("darkMode");
-const darkModeToggleClick = $(".buttonDarkMode");
-const darkModeToggleText = $(".buttonDarkModeText");
-const theme = $("#darkmodestylesheet")[0];
 
-if (theme.href.charAt(0) !== "/") {
-  slash = "/";
-} else {
-  slash = "";
+if (!darkMode) {
+  darkMode = "enabled";
+  localStorage.setItem("darkMode", "enabled");
 }
 
-const lightTheme = () => {
-  darkModeToggleText.text("Dark Mode");
-  theme.href = slash + "assets/css/light.css";
+const enableDarkTheme = () => {
+  $("body").attr("theme", "dark");
+  $(".buttonDarkMode").attr("name", "moon-outline");
   localStorage.setItem("darkMode", "enabled");
-  darkModeToggleClick.attr("name", "sunny-outline");
 };
 
-const darkTheme = () => {
-  darkModeToggleText.text("Light Mode");
-  theme.href = slash + "assets/css/dark.css";
+const enableLightTheme = () => {
+  $("body").attr("theme", "light");
+  $(".buttonDarkMode").attr("name", "sunny-outline");
   localStorage.setItem("darkMode", "disabled");
-  darkModeToggleClick.attr("name", "moon-outline");
 };
 
 if (darkMode === "enabled") {
-  lightTheme();
+  enableDarkTheme();
 } else {
-  darkTheme();
+  enableLightTheme();
 }
 
-darkModeToggleClick.on("click", () => {
-  darkMode = localStorage.getItem("darkMode");
-  if (darkMode === "disabled") {
-    lightTheme();
+$(".buttonDarkMode").on("click", () => {
+  const current = localStorage.getItem("darkMode");
+  if (current === "enabled") {
+    enableLightTheme();
   } else {
-    darkTheme();
-  }
-});
-
-darkModeToggleText.on("click", () => {
-  darkMode = localStorage.getItem("darkMode");
-  if (darkMode === "disabled") {
-    lightTheme();
-  } else {
-    darkTheme();
+    enableDarkTheme();
   }
 });
