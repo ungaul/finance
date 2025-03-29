@@ -34,7 +34,7 @@ body[theme="light"] {
   --border-radius: 1px;
 }
 
-body[theme="dark"] #logo,
+body[theme="dark"] #logo img,
 body[theme="dark"] #preloader-logo {
   filter: brightness(42) hue-rotate(10deg);
 }
@@ -44,17 +44,17 @@ body[themeing="alt"] {
   --article-text-color: rgb(206, 11, 70) !important;
 }
 
-body[themeing="alt"] #logo,
+body[themeing="alt"] #logo img,
 body[themeing="alt"] #preloader-logo {
   filter: brightness(4) hue-rotate(87deg) !important;
 }
 
-body[themeing="alt"][theme="dark"] img {
+body[themeing="alt"][theme="dark"] #app img {
   width: 100%;
   filter: sepia(1) hue-rotate(311deg) saturate(2);
 }
 
-body[themeing="alt"][theme="light"] img {
+body[themeing="alt"][theme="light"] #app img {
   width: 100%;
   filter: invert(1) sepia(1) hue-rotate(311deg);
 }
@@ -96,7 +96,6 @@ body[themeing="alt"][theme="light"] img {
 
   #logo {
     width: 40px !important;
-    aspect-ratio: 304/395 !important;
   }
 
   #links {
@@ -344,19 +343,19 @@ p {
 }
 
 #logo {
-  /* background: url(../img/favicon.jpg); */
-  background: url(../img/logo.png);
-  background-size: cover;
   width: 50px;
-  aspect-ratio: 304/395;
 }
 
-body[theme="dark"] img {
+#logo img{
+  width: 100%;
+}
+
+body[theme="dark"] #app img {
   width: 100%;
   filter: sepia(1) hue-rotate(197deg);
 }
 
-body[theme="light"] img {
+body[theme="light"] #app img {
   width: 100%;
   filter: invert(1) sepia(1) saturate(0.2);
 }

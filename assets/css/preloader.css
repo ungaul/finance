@@ -7,7 +7,7 @@
   bottom: 0;
   position: fixed;
   z-index: 9;
-  color: var(--second);
+  color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +28,7 @@
 }
 
 .preloadcount {
-  color: var(--main);
+  color: transparent;
   text-shadow: var(--text-shadow);
 }
 
