@@ -1,6 +1,6 @@
 #preloader {
   overflow: hidden;
-  background: var(--background);
+  background: var(--main);
   left: 0;
   right: 0;
   top: 0;
@@ -52,22 +52,6 @@
   font-weight: bold;
   opacity: 0;
 }
-
-/* .preload-count-container:before {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  content: "";
-  background: linear-gradient(90deg, rgb(226, 0, 255) 0%, rgb(255, 89, 0) 100%);
-  width: 320px;
-  height: 170px;
-  border-radius: 100%;
-  opacity: 0.05;
-  filter: blur(55px);
-  z-index: -1;
-  animation: opacity 1s infinite ease-in-out;
-} */
 
 @keyframes opacity {
   0% {

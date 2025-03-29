@@ -1,17 +1,3 @@
-// let preloaderDone = localStorage.getItem("preloaderDone");
-
-// if (preloaderDone === "Done") {
-//   var page = window.location.pathname.split("/").pop();
-//   if (page === "index.html") {
-//     load();
-//   } else {
-//     $("#preloader")[0].style.display = "none";
-//     document.documentElement.classList.remove("locked-body");
-//   }
-// } else {
-//   load();
-// }
-
 $(".colored-text").css("opacity", "100");
 setTimeout(() => {
   $(".number")[0].style.setProperty("--num", "100");
@@ -30,11 +16,9 @@ function load() {
     preloaderSwipe();
   }, 1500);
 
-  localStorage.setItem("preloaderDone", "Done");
-
-  // $.when($(".number").innerHTML === "f").then(() => {
-  //   console.log("fini");
-  // });
+  setTimeout(() => {
+    $("#app, header, #top").addClass("active");
+  }, 500);
 }
 
 load();

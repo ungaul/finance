@@ -1,37 +1,11 @@
 /* Dark Mode */
 body[theme="dark"] {
-  --main: #121212;
+  --main: #0f0f0f;
   --second: #fafafa;
   --third: #191919;
   --fourth: #5a5a5a;
-  --background: #0f0f0f;
-  --article-text-color: #8181af;
-  --text-shadow: var(--article-text-color) 0 0 1px, var(--article-text-color) 0 0 1px, var(--article-text-color) 0 0 1px, var(--article-text-color) 0 0 1px, var(--article-text-color) 0 0 1px, var(--article-text-color) 0 0 1px;
-  /* OU #ce0b46 */
-  --background-scrollbar: var(--article-text-color);
-  --background-scrollbar-hover: hsl(0, 0%, 17%);
-  --second: #fff;
-  --default-cursor: url("/assets/cursors/Normal.cur"), default;
-  --link-cursor: url("/assets/cursors/Link.cur"), pointer;
-  --app-padding: 20px;
-  --border-radius: 1px;
-}
-
-body[theme="light"] {
-  --main: #ededed;
-  --second: #050505;
-  --third: rgb(231, 234, 226);
-  --fourth: #5a5a5a;
-  --background: #f3f6ee;
-  --article-text-color: #050538;
-  --text-shadow: var(--article-text-color) 0 0 1px, var(--article-text-color) 0 0 1px, var(--article-text-color) 0 0 1px, var(--article-text-color) 0 0 1px, var(--article-text-color) 0 0 1px, var(--article-text-color) 0 0 1px;
-  --background-scrollbar: var(--article-text-color);
-  --background-scrollbar-hover: hsl(0, 0%, 17%);
-  --second: #fff;
-  --default-cursor: url("/assets/cursors/Normal.cur"), default;
-  --link-cursor: url("/assets/cursors/Link.cur"), pointer;
-  --app-padding: 20px;
-  --border-radius: 1px;
+  --accent: 129, 129, 175;
+  /* or #ce0b46 */
 }
 
 body[theme="dark"] #logo img,
@@ -39,13 +13,31 @@ body[theme="dark"] #preloader-logo {
   filter: brightness(42) hue-rotate(10deg);
 }
 
-/* Alt Theme */
-body[themeing="alt"] {
-  --article-text-color: rgb(206, 11, 70) !important;
+/* Light Mode */
+body[theme="light"] {
+  --main: #f3f6ee;
+  --second: #050505;
+  --third: #e7eae2;
+  --fourth: #999999;
+  --accent: 5, 5, 56;
 }
 
-body[themeing="alt"] #logo img,
-body[themeing="alt"] #preloader-logo {
+/* Alt Theme */
+body[themeing="alt"][theme="dark"] {
+  --accent: 206, 11, 60;
+}
+
+body[themeing="alt"][theme="light"] {
+  --accent: 206, 11, 60;
+}
+
+body[themeing="alt"][theme="dark"] #logo img,
+body[themeing="alt"][theme="dark"] #preloader-logo {
+  filter: brightness(4) hue-rotate(87deg) !important;
+}
+
+body[themeing="alt"][theme="light"] #logo img,
+body[themeing="alt"][theme="light"] #preloader-logo {
   filter: brightness(4) hue-rotate(87deg) !important;
 }
 
@@ -57,6 +49,16 @@ body[themeing="alt"][theme="dark"] #app img {
 body[themeing="alt"][theme="light"] #app img {
   width: 100%;
   filter: invert(1) sepia(1) hue-rotate(311deg);
+}
+
+/* Global Variables */
+body {
+  --article-accent: rgba(var(--accent), 1);
+  --default-cursor: url("/assets/cursors/Normal.cur"), default;
+  --link-cursor: url("/assets/cursors/Link.cur"), pointer;
+  --app-padding: 20px;
+  --border-radius: 1px;
+  --text-shadow: var(--article-accent) 0 0 1px, var(--article-accent) 0 0 1px, var(--article-accent) 0 0 1px, var(--article-accent) 0 0 1px, var(--article-accent) 0 0 1px, var(--article-accent) 0 0 1px;
 }
 
 /* Media Queries */
@@ -82,7 +84,7 @@ body[themeing="alt"][theme="light"] #app img {
   }
 
   header {
-    background: var(--background);
+    background: var(--main);
     mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
   }
 
@@ -175,7 +177,7 @@ body[themeing="alt"][theme="light"] #app img {
 /* Common */
 * {
   font-family: Times, system-ui, sans-serif;
-  color: var(--article-text-color);
+  color: var(--article-accent);
   box-sizing: border-box;
   font-size: 17px;
   font-weight: normal;
@@ -184,17 +186,33 @@ body[themeing="alt"][theme="light"] #app img {
   -moz-user-drag: none;
   -o-user-drag: none;
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(var(--accent), 0.3);
 }
 
 ::selection {
-  background: var(--article-text-color);
+  background: var(--article-accent);
   color: var(--second);
 }
 
-/* *:hover,
-*:not(:hover) {
-  transition: 0.2s ease-in-out;
-} */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--article-accent);
+  border-radius: 10px;
+  cursor: var(--link-cursor);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #434343;
+}
+
+::-webkit-scrollbar-corner {
+  display: none;
+}
 
 html {
   scroll-behavior: smooth;
@@ -202,7 +220,7 @@ html {
 }
 
 body {
-  background: var(--background);
+  background: var(--main);
   margin: 0;
   padding: var(--app-padding);
   overflow-x: hidden !important;
@@ -220,7 +238,6 @@ body {
 p {
   margin: 0;
   width: fit-content;
-  /* color: var(--second); */
 }
 
 a {
@@ -238,7 +255,7 @@ a *:hover {
 button {
   border: 1px solid var(--third);
   padding: 10px 30px;
-  background: linear-gradient(to right, var(--article-text-color) 50%, var(--main) 50%);
+  background: linear-gradient(to right, var(--article-accent) 50%, var(--main) 50%);
   background-size: 202% 100%;
   background-position: right bottom;
   border-radius: var(--border-radius);
@@ -259,7 +276,7 @@ button:not(:hover) {
 }
 
 .horizontal-line {
-  background: var(--article-text-color);
+  background: var(--article-accent);
   width: 100%;
   height: 1px;
   margin-top: 50px;
@@ -380,6 +397,13 @@ p {
 
 #logo img {
   width: 100%;
+}
+
+#app,
+#top,
+header {
+  opacity: 0;
+  z-index: -1;
 }
 
 body[theme="dark"] #app img {
@@ -503,7 +527,7 @@ footer {
   gap: 10px;
 }
 
-footer p{
+footer p {
   text-align: center;
   max-width: 90vw;
 }
@@ -635,4 +659,41 @@ article::after {
   height: 1px;
   background: var(--fourth);
   margin-top: 30px;
+}
+
+@media screen and (max-width: 1080px) {
+  .context-menu {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+}
+
+.context-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(12px);
+  margin: 0;
+  opacity: 0;
+  border: 1px solid var(--third);
+  border-radius: 3px;
+  transition: 0.25s ease-in-out;
+  z-index: 1000;
+  display: none;
+  flex-direction: column;
+}
+
+.context-menu a,
+.context-menu p {
+  padding: 9px 15px;
+  text-decoration: none;
+  color: var(--article-accent);
+  cursor: var(--link-cursor);
+  width: 100%;
+}
+
+.context-menu a:hover,
+.context-menu p:hover {
+  background-color: var(--third);
 }

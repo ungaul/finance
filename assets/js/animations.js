@@ -78,17 +78,3 @@ $(document).ready(function () {
     });
   });
 });
-
-
-// $("#style").click(function () {
-//   if ($("body").css("background") === "rgb(15, 15, 15) none repeat scroll 0% 0% / auto padding-box border-box") {
-//     $(":root").css({ "--article-text-color": "#ce0b46" });
-//     $("#logo, #preloader-logo").css({ "filter": "brightness(10) hue-rotate(85deg)" });
-//   }
-// });
-
-// $("#style").click(function () {
-//   $(":root").css({ "--article-text-color": "#ce0b46" });
-//   $("#logo, #preloader-logo").css({ filter: "brightness(10) hue-rotate(87deg)" });
-//   console.log("samarch");
-// });
