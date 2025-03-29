@@ -13,6 +13,10 @@ body[theme="dark"] #preloader-logo {
   filter: brightness(42) hue-rotate(10deg);
 }
 
+body[theme="dark"] .menu-text:hover {
+  filter: brightness(1.5);
+}
+
 /* Light Mode */
 body[theme="light"] {
   --main: #f3f6ee;
@@ -20,6 +24,10 @@ body[theme="light"] {
   --third: #e7eae2;
   --fourth: #999999;
   --accent: 5, 5, 56;
+}
+
+body[theme="light"] .menu-text:hover {
+  filter: opacity(0.5);
 }
 
 /* Alt Theme */
@@ -83,10 +91,10 @@ body {
     padding: 0 !important;
   }
 
-  header {
+  /* header {
     background: var(--main);
     mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
-  }
+  } */
 
   header * {
     font-size: 16px !important;
@@ -344,6 +352,7 @@ header * {
   overflow: hidden;
   padding-right: 10px;
   min-height: 1rem;
+  cursor: var(--link-cursor);
 }
 
 .menu-text {
@@ -351,11 +360,6 @@ header * {
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 0.9rem;
-}
-
-.menu-item:hover {
-  filter: brightness(1.3);
-  cursor: var(--link-cursor);
 }
 
 #header-left {
@@ -427,15 +431,6 @@ body[theme="light"] #app img {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-#languages a {
-  font-size: 14px !important;
-}
-
-#languages a.active {
-  text-decoration: underline;
-  text-underline-offset: 2px;
 }
 
 #app {
@@ -576,6 +571,10 @@ footer p {
 .active {
   z-index: 1 !important;
   opacity: 100 !important;
+}
+
+header.active{
+  z-index: 2 !important;
 }
 
 .table {
