@@ -1,6 +1,6 @@
 #preloader {
   overflow: hidden;
-  background: var(--main);
+  background: var(--background);
   left: 0;
   right: 0;
   top: 0;
