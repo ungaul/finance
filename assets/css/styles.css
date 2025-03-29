@@ -20,7 +20,7 @@ body[theme="dark"] {
 body[theme="light"] {
   --main: #ededed;
   --second: #050505;
-  --third: #d7d7d7;
+  --third: rgb(231, 234, 226);
   --fourth: #5a5a5a;
   --background: #f3f6ee;
   --article-text-color: #050538;
