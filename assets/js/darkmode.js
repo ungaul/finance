@@ -7,13 +7,13 @@ if (!darkMode) {
 
 const enableDarkTheme = () => {
   $("body").attr("theme", "dark");
-  $(".buttonDarkMode").attr("name", "moon-outline");
+  $(".buttonDarkMode ion-icon").attr("name", "moon-outline");
   localStorage.setItem("darkMode", "enabled");
 };
 
 const enableLightTheme = () => {
   $("body").attr("theme", "light");
-  $(".buttonDarkMode").attr("name", "sunny-outline");
+  $(".buttonDarkMode ion-icon").attr("name", "sunny-outline");
   localStorage.setItem("darkMode", "disabled");
 };
 

@@ -6,14 +6,14 @@ if (!defaultStyle) {
 }
 
 const setAltStyle = () => {
-  $("#style").html("<ion-icon name='brush-outline'></ion-icon>");
   $("body").attr("themeing", "alt");
+  $("#style ion-icon").attr("name", "brush-outline");
   localStorage.setItem("defaultStyle", "enabled");
 };
 
 const setDefaultStyle = () => {
-  $("#style").html("<ion-icon name='brush'></ion-icon>");
-  $("body").attr("themeing", "");
+  $("body").attr("themeing", "default");
+  $("#style ion-icon").attr("name", "brush");
   localStorage.setItem("defaultStyle", "disabled");
 };
 
