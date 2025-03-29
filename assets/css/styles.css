@@ -82,7 +82,7 @@ body[themeing="alt"][theme="light"] #app img {
   }
 
   header {
-    background: var(--main);
+    background: var(--background);
     mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
   }
 
@@ -94,17 +94,13 @@ body[themeing="alt"][theme="light"] #app img {
     gap: 25px !important;
   }
 
-  #logo {
-    width: 40px !important;
-  }
-
   #links {
     gap: 7.5px !important;
   }
 
   .table {
     width: 200%;
-    overflow: scroll;
+    max-width: unset !important;
   }
 
   .table-container {
@@ -137,6 +133,42 @@ body[themeing="alt"][theme="light"] #app img {
 
   #links {
     display: none !important;
+  }
+
+  .table1 {
+    height: 250px !important;
+  }
+
+  .table2 {
+    height: 480px !important;
+  }
+
+  .table3 {
+    height: 230px !important;
+  }
+
+  .table4 {
+    height: 410px !important;
+  }
+
+  .table5 {
+    height: 350px !important;
+  }
+
+  .table6 {
+    height: 440px !important;
+  }
+
+  .table7 {
+    height: 340px !important;
+  }
+
+  .table8 {
+    height: 300px !important;
+  }
+
+  .table9 {
+    height: 230px !important;
   }
 }
 
@@ -346,7 +378,7 @@ p {
   width: 50px;
 }
 
-#logo img{
+#logo img {
   width: 100%;
 }
 
@@ -423,6 +455,7 @@ h3 {
 h4 {
   padding-top: 20px;
   font-size: 20px;
+  font-weight: 600;
 }
 
 p {
@@ -468,6 +501,11 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+}
+
+footer p{
+  text-align: center;
+  max-width: 90vw;
 }
 
 .copyright {
@@ -519,7 +557,6 @@ footer {
 .table {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
 }
 
@@ -571,6 +608,7 @@ footer {
   align-items: center;
   overflow: hidden;
   width: 100%;
+  max-width: unset !important;
 }
 
 .cell {

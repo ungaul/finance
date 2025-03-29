@@ -7,7 +7,7 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--fourth);
+  background: var(--article-text-color);
   border-radius: 10px;
   cursor: var(--link-cursor);
 }
