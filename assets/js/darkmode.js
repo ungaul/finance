@@ -1,8 +1,8 @@
 let darkMode = localStorage.getItem("darkMode");
 
 if (!darkMode) {
-  darkMode = "enabled";
-  localStorage.setItem("darkMode", "enabled");
+  darkMode = "disabled";
+  localStorage.setItem("darkMode", "disabled");
 }
 
 const enableDarkTheme = () => {
